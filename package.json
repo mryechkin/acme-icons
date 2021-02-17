@@ -1,0 +1,32 @@
+{
+  "name": "@acme/icons",
+  "version": "1.0.0",
+  "description": "SVG-based React icon components",
+  "keywords": [
+    "React",
+    "SVG",
+    "Icons"
+  ],
+  "module": "dist/index.esm.js",
+  "files": ["dist"],
+  "scripts": {
+    "prebuild": "rimraf src && rimraf dist",
+    "build": "npm run svgr && rollup -c",
+    "svgr": "svgr --icon --title-prop --replace-attr-values '#1D1D1D=currentColor' -d src assets"
+  },
+  "author": "Mykhaylo Ryechkin",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.12.17",
+    "@babel/preset-env": "^7.12.17",
+    "@babel/preset-react": "^7.12.13",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@svgr/cli": "^5.5.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.39.0",
+    "rollup-plugin-filesize": "^9.1.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.12.18"
+  }
+}
